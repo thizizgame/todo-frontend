@@ -69,11 +69,11 @@ export default function Home() {
         {tasks.map((task) => (
           <li key={task.id} className="list-row flex justify-between items-center">
             <div className="flex gap-2 items-center">
-              <input onChange={() => handleCheck(task)} type="checkbox" />
+              <input onChange={() => handleCheck(task)} type="checkbox" className="checkbox checkbox-xs  checkbox-secondary" />
               {task.name}
             </div>
 
-            <div>
+            <div className="flex gap-1">
               <button disabled={task.mode} className="btn btn-accent rounded-xl w-20  btn-soft btn-xs" onClick={() => editTask(task)}>Edit</button>
               <button disabled={!task.mode} className="btn btn-error rounded-xl w-20  btn-soft btn-xs" onClick={() => deleteTask(task.id)}>Delete</button>
             </div>
